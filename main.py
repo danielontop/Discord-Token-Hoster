@@ -22,15 +22,15 @@ class Discord(object):
     def __init__(self):
         self.tokens = []
 
-        with open("config/hosting/spotify songs.json") as f:
+        with open("spotify songs.json") as f:
             self.songs = json.loads(f.read())
-        with open("config/hosting/config.json") as f:
+        with open("config.json") as f:
             self.config = json.loads(f.read())
-        with open("config/hosting/custom status.txt", encoding="utf-8") as f:
+        with open("custom status.txt", encoding="utf-8") as f:
             self.status = [i.strip() for i in f]
-        with open("config/hosting/user bios.txt", encoding="utf-8") as f:
+        with open("user bios.txt", encoding="utf-8") as f:
             self.bios = [i.strip() for i in f]
-        for line in open("config/hosting/tokens.txt"):
+        for line in open("tokens.txt"):
             if ":" in line.replace("\n", ""):
                 token = line.replace("\n", "").split(":")[0]
             else:
